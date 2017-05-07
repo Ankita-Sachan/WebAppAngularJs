@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/Script.js"></script>
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body ng-app="myModule">
+    <div ng-controller="myController">
+        <div>
+            <input type="text" ng-model="message" />
+            {{message}}
+        </div>
+        <div>
+            <input type="text" ng-model="greeting" />
+            {{greeting}}
+        </div>
+        <br /><br />
+        <div>
+            Rows to Display: <input type="number"  max="3" min="1" ng-model="rowlimit"/>
+            <br />
+            <input type="checkbox" ng-model="hidesalary" /> Hide Salary
+            <br /><br />
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>DOB</th>
+                        <th ng-show="!hidesalary">Salary</th>
+                        <th>Salary</th>
+                        <th>Likes</th>
+                        <th>Dislikes</th>
+                        <th>Like/Dislike</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="emp in employees | limitTo:rowlimit | orderBy:'+FirstName'">
+                        <td>{{emp.FirstName}}</td>
+                        <td>{{emp.LastName | lowercase}}</td>
+                        <td>{{emp.Gender | uppercase}}</td>
+                        <td>{{emp.DateofBirth | date:"dd/MM/yyyy"}}</td>
+                        <td ng-hide="hidesalary">{{emp.Salary | number:2}}</td>
+                        <td>{{emp.Salary|currency}}</td>
+                        <td>{{emp.Likes}}</td>
+                        <td>{{emp.Dislikes}}</td>
+                        <td>
+                            <input id="like" type="button" value="Like" ng-click="incrementLikes(emp)" />
+                            <input id="dislike" type="button" value="Disike" ng-click="incrementDislikes(emp)" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <div>
+            <ul>
+                <li ng-repeat="country in countries">
+                    {{country.Country}} -Index-{{$index}}
+                    <ul>
+                        <li ng-repeat="city in country.Cities">{{city.Name}} -Parent Index-{{$parent.$index}} Index-{{$index}}</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li ng-repeat="country in countries" ng-init="parentindex=$index">
+                    {{country.Country}} -Index-{{$index}}
+                    <ul>
+                        <li ng-repeat="city in country.Cities">{{city.Name}}- Parent Index-{{parentindex}} Index-{{$index}}</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

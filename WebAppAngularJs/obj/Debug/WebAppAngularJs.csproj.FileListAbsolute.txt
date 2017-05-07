@@ -1,0 +1,6 @@
+D:\Project\WebAppAngularJs\WebAppAngularJs\bin\WebAppAngularJs.dll.config
+D:\Project\WebAppAngularJs\WebAppAngularJs\bin\WebAppAngularJs.dll
+D:\Project\WebAppAngularJs\WebAppAngularJs\bin\WebAppAngularJs.pdb
+D:\Project\WebAppAngularJs\WebAppAngularJs\obj\Debug\WebAppAngularJs.dll
+D:\Project\WebAppAngularJs\WebAppAngularJs\obj\Debug\WebAppAngularJs.pdb
+D:\Project\WebAppAngularJs\WebAppAngularJs\obj\Debug\WebAppAngularJs.csprojResolveAssemblyReference.cache

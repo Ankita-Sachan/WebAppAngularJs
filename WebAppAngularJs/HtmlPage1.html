@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/Script.js"></script>
+    <title></title>
+</head>
+<body ng-app="myModule">
+    <div ng-controller="myController">
+        <div>Name: {{tour.Name}}</div>
+        <div>Island: {{tour.Island}}</div>
+        <div>
+            <img ng-src="{{tour.Image}}" alt="{{tour.Name}}" style="height:200px; width:300px" />
+        </div>
+    </div>
+    <div ng-controller="myController">
+        {{message}}
+    </div>
+    <div ng-controller="myController">
+        <div> FirstName: {{employee.FirstName}}</div>
+        <div> LastName: {{employee.LastName}}</div>
+        <div> Gender: {{employee.Gender}}</div>
+    </div>
+    <div ng-app>
+        10+20={{10+20}}
+    </div>
+    <div>
+        {{1==1}}
+    </div>
+    <div>
+        {{ {name: 'ankita', age: '30'}.name }}
+    </div>
+    <div>
+        {{ ['kshitij','ankita','Swara'][2] }}
+    </div>
+    <div>
+        40+20={{40+20}}
+    </div>
+</body>
+</html>
